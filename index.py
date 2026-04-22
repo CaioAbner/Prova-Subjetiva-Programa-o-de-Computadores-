@@ -11,14 +11,14 @@ def campoObrigatorio(valor):
         except ValueError:
             print(f"O valor digitado não foi um número. Por favor digite apenas números.")
 
-def depositar_valor(valor):
+def depositarValor(valor):
     if (valor <= 0):
         print(f"Não é possível realizar a operação, pois o valor digitado é menor que zero.")
     else:
         resultado = saldo_usuario + valor
         return resultado
 
-def sacar_valor(valor):
+def sacarValor(valor):
     if (valor > saldo_usuario or valor <= 0):
         print(f"Não é possível realizar a operação, pois o valor digitado é maior que o saldo ou é igual a zero.")
     else:
@@ -39,11 +39,11 @@ while True:
         print(f"O valor do seu saldo é de: R$ {saldo_usuario}")
     elif (menu == 2):
         valor_depositado = campoObrigatorio("Digite o valor que deseja depositar: ")
-        saldo_usuario = depositar_valor(valor_depositado)
+        saldo_usuario = depositarValor(valor_depositado)
         historico_saldos.append({"operacao": "Depósito", "valor" : valor_depositado})
     elif (menu == 3):
         valor_sacado = campoObrigatorio("Digite o valor que deseja sacar: ")
-        saldo_usuario = sacar_valor(valor_sacado)
+        saldo_usuario = sacarValor(valor_sacado)
         historico_saldos.append({"operacao": "Saque", "valor": valor_sacado})
     elif (menu == 4):
         print(f"Eis seu histórico de transações:\n{historico_saldos}")
