@@ -13,8 +13,13 @@ def sacar_valor(valor):
         return resultado
         
 historico_saldos = []
-saldo_usuario = float(input("Digite o seu saldo: "))
-historico_saldos.append({"operacao":"Saldo inicial", "valor": saldo_usuario})
+while True:
+    try: 
+        saldo_usuario = float(input("Digite o seu saldo: "))
+        historico_saldos.append({"operacao":"Saldo inicial", "valor": saldo_usuario})
+        break
+    except ValueError:
+        print(f"O valor digitado não foi um número. Por favor digite apenas números.")
 
 while True:
     menu = int(input("Digite a operação que deseja realizar: \n1 - Consultar saldo\n2 - Depositar\n3 - Sacar\n4 - Histórico de Transações\n0 - Encerrar programa\n: "))
