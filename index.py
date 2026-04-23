@@ -30,7 +30,7 @@ saldo_usuario = campoObrigatorio("Digite o saldo: ")
 historico_saldos.append({"operacao":"Saldo inicial", "valor": saldo_usuario})
 
 while True:
-    menu = int(input("Digite a operação que deseja realizar: \n1 - Consultar saldo\n2 - Depositar\n3 - Sacar\n4 - Histórico de Transações\n0 - Encerrar programa\n: "))
+    menu = campoObrigatorio("Digite a operação que deseja realizar: \n1 - Consultar saldo\n2 - Depositar\n3 - Sacar\n4 - Histórico de Transações\n0 - Encerrar programa\n: ")
 
     if (menu == 0):
         print(f"O caixa está sendo fechado...")
