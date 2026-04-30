@@ -5,6 +5,10 @@ def campoObrigatorio(valor):
         if (not resultado):
             print(f"Erro! O campo não pode estar vazio!")
             continue
+
+        if (resultado <= 0):
+            print(f"Erro! O valor precisa ser maior que 0!")
+            continue
         
         try:
             return float(resultado)
